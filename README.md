@@ -20,6 +20,7 @@ You can add this overlay to your system using `eselect-repository`.
 ```bash
 sudo eselect repository add mselimyavuz-overlay git [https://gitlab.com/mselimyavuz/mselimyavuz-overlay.git](https://gitlab.com/mselimyavuz/mselimyavuz-overlay.git)
 sudo emaint sync -r mselimyavuz-overlay
+```
 
 ### 2. Unmasking Packages
 Since these are live (`-9999`) ebuilds, you must accept the `**` keyword for them.
