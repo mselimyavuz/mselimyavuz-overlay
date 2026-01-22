@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>mselim.yavuz.phd@gmail.com</email>
+		<name>M. Selim Yavuz</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">falkTX/Carla</remote-id>
+	</upstream>
+	<use>
+		<flag name="gtk">Build the GTK2 UI (legacy)</flag>
+		<flag name="gtk3">Build the GTK3 UI</flag>
+		<flag name="qt5">Build the Qt5 UI (standard)</flag>
+		<flag name="vst">Enable VST2 plugin hosting support</flag>
+	</use>
+</pkgmetadata>

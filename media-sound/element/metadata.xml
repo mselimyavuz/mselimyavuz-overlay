@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>mselim.yavuz.phd@gmail.com</email>
+		<name>M. Selim Yavuz</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">kushview/Element</remote-id>
+		<bugs-to>https://github.com/kushview/Element/issues</bugs-to>
+	</upstream>
+	<longdescription lang="en">
+		Element is a modular AU/VST/VST3/LV2 audio plugin host. 
+		Create powerful effects, racks, and instruments by connecting plugins 
+		to one another.
+	</longdescription>
+</pkgmetadata>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>mselim.yavuz.phd@gmail.com</email>
+		<name>M. Selim Yavuz</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">juce-framework/JUCE</remote-id>
+	</upstream>
+	<use>
+		<flag name="extras">Build the Projucer IDE and AudioPluginHost</flag>
+		<flag name="gtk">Enable GTK+ support (required for Linux GUI)</flag>
+		<flag name="webkit">Enable embedded web browser support (WebView)</flag>
+	</use>
+</pkgmetadata>
