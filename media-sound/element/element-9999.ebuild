@@ -7,7 +7,7 @@ inherit cmake git-r3 xdg toolchain-funcs
 
 DESCRIPTION="Advanced Audio Plugin Host (VST/AU/LV2) by Kushview"
 HOMEPAGE="https://kushview.net/element/"
-EGIT_REPO_URI="https://github.com/kushview/Element.git"
+EGIT_REPO_URI="https://github.com/mselimyavuz/element.git"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -45,23 +45,23 @@ BDEPEND="
 "
 
 src_configure() {
-	tc-export CC CXX
-	export CC=clang
-	export CXX=clang++
+    tc-export CC CXX
 
-	# --- SANDBOX FIX ---
-	# The build runs 'juce_lv2_helper' which tries to scan for MIDI devices.
-	# We allow it to 'predict' access to /dev/snd/seq so the sandbox doesn't kill the build.
-	# It will still fail to open the device (Permission Denied), but the build will continue.
-	addpredict /dev/snd/seq
-	addpredict /dev/snd/timer
+    export CC=clang
+    export CXX=clang++
 
-	local mycmakeargs=(
-		-DELEMENT_BUILD_PLUGINS=ON
-		-DCMAKE_BUILD_TYPE=Release
-		-DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS
-		-DFETCHCONTENT_FULLY_DISCONNECTED=ON
-	)
+    addpredict /dev/snd/seq
+    addpredict /dev/snd/timer
 
-	cmake_src_configure
+    local juce_overrides="-DJUCE_USE_GTK=0 -DJUCE_USE_X11=0"
+
+    local mycmakeargs=(
+        -DELEMENT_BUILD_PLUGINS=ON
+        -DCMAKE_BUILD_TYPE=Release
+        -DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS
+        -DFETCHCONTENT_FULLY_DISCONNECTED=ON
+        -DCMAKE_CXX_FLAGS="${CXXFLAGS} ${juce_overrides}"
+    )
+
+    cmake_src_configure
 }
